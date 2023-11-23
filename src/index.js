@@ -24,3 +24,6 @@ store.subscribe(() => {
 
 // Первый рендер приложения
 root.render(<App store={store}/>);
+
+
+

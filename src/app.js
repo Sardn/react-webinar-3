@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { countMessage } from './utils.js'
 import { createElement } from './utils.js'
+
 import './styles.css'
 
 /**
@@ -22,23 +24,21 @@ function App({ store }) {
   //--------------------
   return (
     <div className='App'>
-      {/* //-------------------- */}
       {/* <div>
-        {elements.map((element) => (
-          <div
-            key={element.code}
-            onClick={() => handleElementClick(element.code)}
-            style={{
-              backgroundColor:
-                element.code === activeElementId ? 'blue' : 'initial',
-              color: element.code === activeElementId ? 'white' : 'initial',
-            }}
-          >
-            {element.title}
-          </div>
-        ))}
-      </div> */}
-      {/* //-------------------- */}
+//         {elements.map((element) => (
+//           <div
+//             key={element.code}
+//             onClick={() => handleElementClick(element.code)}
+//             style={{
+//               backgroundColor:
+//                 element.code === activeElementId ? 'blue' : 'initial',
+//               color: element.code === activeElementId ? 'white' : 'initial',
+//             }}
+//           >
+//             {element.title}
+//           </div>
+//         ))}
+//       </div> */}
       <div className='App-head'>
         <h1>Приложение на чистом JS</h1>
       </div>
@@ -51,11 +51,13 @@ function App({ store }) {
             <div key={item.code} className='List-item'>
               <div
                 className={'Item' + (item.selected ? ' Item_selected' : '')}
-                // onClick={() => handleElementClick.store.selectItem(item.code)}
                 onClick={() => store.selectItem(item.code)}
               >
                 <div className='Item-code'>{item.code}</div>
-                <div className='Item-title'>{item.title}</div>
+                <div className='Item-title'>
+                  {item.title}
+                  {item.count && countMessage(item.count)}
+                </div>
                 <div className='Item-actions'>
                   <button onClick={() => store.deleteItem(item.code)}>
                     Удалить
