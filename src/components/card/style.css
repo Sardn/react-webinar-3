@@ -1,0 +1,28 @@
+.Card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px dashed #ccc;
+}
+
+.Card-num {
+  margin-right: 1rem;
+}
+
+.Card-title {
+  display: flex;
+  flex-grow: 1;
+  justify-content: start;
+}
+
+.Card-sum {
+  display: flex;
+  justify-content: flex-end;
+  width: 6rem;
+}
+
+.Card-btn {
+  width: 5rem;
+  margin-left: 1rem;
+}

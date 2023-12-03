@@ -1,5 +1,17 @@
 .Controls {
   display: flex;
   justify-content: flex-end;
-  padding: 20px;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px dashed #ccc;
+}
+
+.Controls-total {
+  font-weight: bold;
+}
+
+.Controls-button {
+  height: 1.5rem;
+  width: 5rem;
+  margin-left: 1rem;
 }
